@@ -1,0 +1,58 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <button onover id="btn">Click</button>
+
+    <div class="box"></div>
+
+
+    <script>
+
+        
+        var btn = document.querySelector('#btn');
+        var box = document.querySelector('.box')
+
+        
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            console.log(color);
+            return color;
+        }
+        
+        var newColor = getRandomColor(); // #E943F0
+      //  
+        
+        btn.onclick = function() {
+            var quad = document.createElement('div');
+            quad.setAttribute('class','quadrado');
+
+            quad.onmouseover = function (){
+                quad.style.backgroundColor = getRandomColor();
+        }
+            quad.style.width = 100;
+            quad.style.height = 100;
+            quad.style.backgroundColor = newColor;
+
+            box.appendChild(quad);
+
+
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>
